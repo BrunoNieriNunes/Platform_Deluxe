@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: adf05c4a155e09148accdc3066c3b9b5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7dac24f8ae5a7464ca722fcaa43cf3a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,11 +96,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 36683558231746545}
-  - component: {fileID: -1013052329554527202}
+  - component: {fileID: 4201474855246109173}
   - component: {fileID: 4655802105977190146}
   - component: {fileID: 1929583135857560479}
   m_Layer: 9
-  m_Name: Projectile
+  m_Name: BoomerProjectile
   m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,7 +122,7 @@ Transform:
   - {fileID: 8604421300056622374}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-1013052329554527202
+--- !u!114 &4201474855246109173
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,12 +131,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 7057421889249941263}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bfaaabc126b1e146808f693e6a2c1e3, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ad952e475fa32b43ae761f828550da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 4655802105977190146}
   projectileSpeed: 20
   damage: 1
+  uppedDamage: 2
+  time: 0.75
+  timeToLive: 1.5
+  spin: {x: 0, y: 0, z: 16}
 --- !u!50 &4655802105977190146
 Rigidbody2D:
   serializedVersion: 5

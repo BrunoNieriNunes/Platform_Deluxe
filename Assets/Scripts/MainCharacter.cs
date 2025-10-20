@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class MainCharacter : MonoBehaviour {
     [SerializeField] private uint maxHealth;
 
@@ -13,7 +14,8 @@ public class MainCharacter : MonoBehaviour {
     [SerializeField] private float coyoteTime;
     [SerializeField] private float jumpBuffer;
 
-    [SerializeField] private Projectile projectile;
+    [SerializeField] private GenericProjectile[] projectiles;
+    [SerializeField] private int selectedProjectile;
     [SerializeField] private Rigidbody2D rb2d;
     [SerializeField] private SpriteRenderer sprite;
 
@@ -111,7 +113,7 @@ public class MainCharacter : MonoBehaviour {
 
         if (this.attackTimer <= 0f) {
             if (this.attackAction.WasPressedThisFrame()) {
-                Attack(this.projectile, new Vector2(this.verticalDirectionOnly ? 0 : this.facingDirection[0], this.facingDirection[1]));
+                Attack(this.projectiles[this.selectedProjectile], new Vector2(this.verticalDirectionOnly ? 0 : this.facingDirection[0], this.facingDirection[1]));
                 this.attackTimer = this.attackDelay;
             }
         }
@@ -135,10 +137,9 @@ public class MainCharacter : MonoBehaviour {
         rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
-    private void Attack (Projectile projectile, Vector2 direction) {
-        Projectile instantiated = Instantiate(projectile, this.transform.position + Vector3.back, Quaternion.identity);
-        instantiated.GiveVelocity(direction);
-        Destroy(instantiated.gameObject, 1f);
+    private void Attack (GenericProjectile projectile, Vector2 direction) {
+        GenericProjectile instantiated = Instantiate(projectile, this.transform.position + Vector3.back, Quaternion.identity);
+        instantiated.Fire(direction);
     }
 
     public void MakeAirborne (bool airborne) {

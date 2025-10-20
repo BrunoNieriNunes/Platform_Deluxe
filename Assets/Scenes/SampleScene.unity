@@ -1332,6 +1332,26 @@ PrefabInstance:
       propertyPath: jumpBuffer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6253695114045258369, guid: 7822b643baaf4024988aa2ee08a87cae, type: 3}
+      propertyPath: attackDelay
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6253695114045258369, guid: 7822b643baaf4024988aa2ee08a87cae, type: 3}
+      propertyPath: selectedProjectile
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6253695114045258369, guid: 7822b643baaf4024988aa2ee08a87cae, type: 3}
+      propertyPath: projectiles.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6253695114045258369, guid: 7822b643baaf4024988aa2ee08a87cae, type: 3}
+      propertyPath: 'projectiles.Array.data[0]'
+      value: 
+      objectReference: {fileID: -1013052329554527202, guid: d15e39f4435bba240bae4fd621e49e82, type: 3}
+    - target: {fileID: 6253695114045258369, guid: 7822b643baaf4024988aa2ee08a87cae, type: 3}
+      propertyPath: 'projectiles.Array.data[1]'
+      value: 
+      objectReference: {fileID: 4201474855246109173, guid: c2fe7b6b98b8a5b40924e5692849082a, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

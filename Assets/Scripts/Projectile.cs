@@ -1,13 +1,17 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour {
+public class Projectile : GenericProjectile {
     [SerializeField] Rigidbody2D rb2d;
     [SerializeField] float projectileSpeed;
     [SerializeField] uint damage;
+    [SerializeField] float timeToLive;
 
-    public void GiveVelocity (Vector2 v) {
-        this.rb2d.linearVelocity = v.normalized * this.projectileSpeed;
+    private bool damaged = false;
+
+    public override void Fire(Vector2 direction) {
+        this.rb2d.linearVelocity = direction.normalized * this.projectileSpeed;
+        Destroy(this.gameObject, this.timeToLive);
     }
 
     private void OnTriggerEnter2D (Collider2D collider) {
@@ -15,9 +19,10 @@ public class Projectile : MonoBehaviour {
             Destroy(this.gameObject);
             return;
         }
-        if (collider.CompareTag("Enemy")) {
+        if (collider.CompareTag("Enemy") && !this.damaged) {
+            this.damaged = true;
             Enemy enemy = collider.GetComponent<Enemy>();
-            enemy.health.TakeDamage(damage);
+            enemy.health.TakeDamage(this.damage);
             Destroy(this.gameObject);
             return;
         }
