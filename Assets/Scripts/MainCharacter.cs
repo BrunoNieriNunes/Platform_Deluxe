@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
+// A anotação [RequireComponent] foi removida daqui,
+// já que o Animator está no filho, e não neste objeto.
 public class MainCharacter : MonoBehaviour {
     [SerializeField] private uint maxHealth;
 
@@ -18,6 +19,9 @@ public class MainCharacter : MonoBehaviour {
     [SerializeField] private int selectedProjectile;
     [SerializeField] private Rigidbody2D rb2d;
     [SerializeField] private SpriteRenderer sprite;
+
+    // --- ADIÇÃO: Variável para o Animator ---
+    private Animator animator;
 
     public Health health { get; private set; }
 
@@ -51,6 +55,11 @@ public class MainCharacter : MonoBehaviour {
         this.moveAction = InputSystem.actions.FindAction("Move");
         this.jumpAction = InputSystem.actions.FindAction("Jump");
         this.attackAction = InputSystem.actions.FindAction("Attack");
+
+        // --- CORREÇÃO APLICADA AQUI ---
+        // Usamos GetComponentInChildren para encontrar o Animator no objeto "Sprite" filho
+        this.animator = GetComponentInChildren<Animator>();
+        // --- FIM DA CORREÇÃO ---
     }
 
     private void Update () {
@@ -59,7 +68,19 @@ public class MainCharacter : MonoBehaviour {
         Vector2 moveValue = this.moveAction.ReadValue<Vector2>();
         Walk(moveValue * this.movementSpeed, this.rb2d);
 
-        //DIRE��O
+        // --- ADIÇÃO: Lógica da Animação ---
+        // Pega o valor absoluto (sempre positivo) da velocidade horizontal
+        float horizontalSpeed = Mathf.Abs(this.rb2d.linearVelocity.x);
+        
+        // Envia o valor da velocidade para o parâmetro "Speed" no Animator
+        // Colocamos um "if" para garantir que ele só tente se o animator foi encontrado
+        if (this.animator != null)
+        {
+            this.animator.SetFloat("Speed", horizontalSpeed);
+        }
+        // --- FIM DA ADIÇÃO ---
+
+        //DIREÇÃO
 
         if (moveValue.y > this.tolerance) {
             this.facingDirection[1] = 1;

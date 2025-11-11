@@ -51,10 +51,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   movementSpeed: 5
-  jumpForce: 15
-  projectile: {fileID: -1013052329554527202, guid: d15e39f4435bba240bae4fd621e49e82, type: 3}
-  rb2d: {fileID: 2471326392539220984}
   attackDelay: 0.1
+  jumpForce: 15
+  jumpCut: 0
+  coyoteTime: 0
+  jumpBuffer: 0
+  projectiles: []
+  selectedProjectile: 0
+  rb2d: {fileID: 2471326392539220984}
   sprite: {fileID: 3775517292306619518}
 --- !u!61 &6567478314807367379
 BoxCollider2D:
@@ -139,6 +143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4466874302385109827}
   - component: {fileID: 3775517292306619518}
+  - component: {fileID: 8656566979414520668}
   m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
@@ -155,8 +160,8 @@ Transform:
   m_GameObject: {fileID: 7689312698211173192}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 1.5, z: 1}
+  m_LocalPosition: {x: 0.1971, y: 0, z: 0}
+  m_LocalScale: {x: 1.40378, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2588203571224067849}
@@ -181,6 +186,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -202,12 +209,13 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: dd14ecbb4bb7d2746947cc0ef97a78d1, type: 3}
+  m_Sprite: {fileID: 1393585624628069235, guid: 97f8f10fe4991114597888a99e5c0f4d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 3, y: 4}
@@ -216,6 +224,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8656566979414520668
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7689312698211173192}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d2ec176c5cf88d9489599894e57759c4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8183890729885262487
 GameObject:
   m_ObjectHideFlags: 0
