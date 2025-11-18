@@ -8,16 +8,16 @@ public class Parallax : MonoBehaviour {
     private float z;
 
     [SerializeField] private Vector2 parallaxFactor;
-    [SerializeField] private bool infinteHorizontal;
-    [SerializeField] private bool infinteVertical;
+    [SerializeField] private Vector2 offset;
+    [SerializeField] private bool infiniteHorizontal;
+    [SerializeField] private bool infiniteVertical;
     [SerializeField] private Transform cam;
 
     private void Start() {
         this.z = this.transform.position.z;
 
         this.lastCameraPosition = this.cam.position;
-        Vector3 startPosition = this.lastCameraPosition;
-        startPosition.z = this.z;
+        Vector3 startPosition = new Vector3(this.lastCameraPosition.x + this.offset.x, this.lastCameraPosition.y + this.offset.y, this.z);
         this.transform.position = startPosition;
 
         Sprite sprite = this.GetComponent<SpriteRenderer>().sprite;
@@ -34,14 +34,14 @@ public class Parallax : MonoBehaviour {
         float cameraTravelDistanceX = this.cam.position.x - this.transform.position.x;
         float cameraTravelDistanceY = this.cam.position.y - this.transform.position.y;
 
-        if (this.infinteHorizontal && Mathf.Abs(cameraTravelDistanceX) >= this.textureUnitSizeX) {
+        if (this.infiniteHorizontal && Mathf.Abs(cameraTravelDistanceX) >= this.textureUnitSizeX) {
             float offsetPositionX = cameraTravelDistanceX % this.textureUnitSizeX;
-            this.transform.position = new Vector3(this.cam.position.x + offsetPositionX, this.transform.position.y, this.z);
+            this.transform.position = new Vector3(this.cam.position.x + offsetPositionX + this.offset.x, this.transform.position.y, this.z);
         }
 
-        if (this.infinteVertical && Mathf.Abs(cameraTravelDistanceY) >= this.textureUnitSizeY) {
+        if (this.infiniteVertical && Mathf.Abs(cameraTravelDistanceY) >= this.textureUnitSizeY) {
             float offsetPositionY = cameraTravelDistanceY % this.textureUnitSizeY;
-            this.transform.position = new Vector3(this.transform.position.x, this.cam.position.y + offsetPositionY, this.z);
+            this.transform.position = new Vector3(this.transform.position.x, this.cam.position.y + offsetPositionY + this.offset.y, this.z);
         }
     }
 }
