@@ -1,32 +1,35 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-// A anotação [RequireComponent] foi removida daqui,
-// já que o Animator está no filho, e não neste objeto.
 public class MainCharacter : MonoBehaviour {
+    [Header("Status")]
     [SerializeField] private uint maxHealth;
 
+    [Header("Movement")]
     [SerializeField] private float movementSpeed;
-
-    [SerializeField] private float attackDelay;
-
     [SerializeField] private float jumpForce;
     [SerializeField] [Range(0f, 1f)] private float jumpCut;
     [SerializeField] private float coyoteTime;
     [SerializeField] private float jumpBuffer;
 
+    [Header("Combat")]
+    [SerializeField] private float attackDelay;
     [SerializeField] private GenericProjectile[] projectiles;
     [SerializeField] private int selectedProjectile;
+    
+    [Header("Components")]
     [SerializeField] private Rigidbody2D rb2d;
     [SerializeField] private SpriteRenderer sprite;
 
-    // --- ADIÇÃO: Variável para o Animator ---
+    // --- ADIÇÃO: Variáveis de Animação ---
     private Animator animator;
+    private float shootingAnimTimer; 
+    private readonly float shootingAnimDuration = 0.2f; // Tempo que a animação de tiro fica ativa
+    // -------------------------------------
 
     public Health health { get; private set; }
 
     private float attackTimer;
-
     private float coyoteTimer;
     private float jumpBufferTimer;
     private bool airborne;
@@ -40,7 +43,8 @@ public class MainCharacter : MonoBehaviour {
     private InputAction attackAction;
 
     ~MainCharacter() {
-        this.health.OnDeath -= Die;
+        if (this.health != null)
+            this.health.OnDeath -= Die;
     }
 
     private void Start () {
@@ -52,90 +56,88 @@ public class MainCharacter : MonoBehaviour {
         this.airborne = false;
         this.facingDirection = new int[] {1, 0};
         this.verticalDirectionOnly = false;
+        
         this.moveAction = InputSystem.actions.FindAction("Move");
         this.jumpAction = InputSystem.actions.FindAction("Jump");
         this.attackAction = InputSystem.actions.FindAction("Attack");
 
-        // --- CORREÇÃO APLICADA AQUI ---
-        // Usamos GetComponentInChildren para encontrar o Animator no objeto "Sprite" filho
+        // --- CORREÇÃO: Busca o Animator nos filhos (na Sprite) ---
         this.animator = GetComponentInChildren<Animator>();
-        // --- FIM DA CORREÇÃO ---
     }
 
     private void Update () {
-        //ANDAR
-
+        // 1. INPUT DE MOVIMENTO
         Vector2 moveValue = this.moveAction.ReadValue<Vector2>();
         Walk(moveValue * this.movementSpeed, this.rb2d);
 
-        // --- ADIÇÃO: Lógica da Animação ---
-        // Pega o valor absoluto (sempre positivo) da velocidade horizontal
-        float horizontalSpeed = Mathf.Abs(this.rb2d.linearVelocity.x);
-        
-        // Envia o valor da velocidade para o parâmetro "Speed" no Animator
-        // Colocamos um "if" para garantir que ele só tente se o animator foi encontrado
-        if (this.animator != null)
-        {
-            this.animator.SetFloat("Speed", horizontalSpeed);
-        }
-        // --- FIM DA ADIÇÃO ---
-
-        //DIREÇÃO
-
+        // 2. CÁLCULO DE DIREÇÃO (Atualiza facingDirection)
         if (moveValue.y > this.tolerance) {
-            this.facingDirection[1] = 1;
+            this.facingDirection[1] = 1; // Cima
         }
         else if (moveValue.y < -this.tolerance) {
-            this.facingDirection[1] = -1;
+            this.facingDirection[1] = -1; // Baixo
         }
         else {
-            this.facingDirection[1] = 0;
+            this.facingDirection[1] = 0; // Neutro
         }
 
         this.verticalDirectionOnly = false;
         if (moveValue.x > this.tolerance) {
-            this.facingDirection[0] = 1;
+            this.facingDirection[0] = 1; // Direita
         }
         else if (moveValue.x < -this.tolerance) {
-            this.facingDirection[0] = -1;
+            this.facingDirection[0] = -1; // Esquerda
         }
         else if (this.facingDirection[1] != 0) {
             this.verticalDirectionOnly = true;
         }
 
+        // Vira o personagem horizontalmente
         if (this.facingDirection[0] != 0) {
             Vector3 scale = this.transform.localScale;
             scale.x = this.facingDirection[0];
             this.transform.localScale = scale;
         }
 
-        //PULO
+        // 3. ATUALIZAÇÃO DO ANIMATOR
+        if (this.animator != null)
+        {
+            // Define Velocidade (Run vs Idle)
+            float horizontalSpeed = Mathf.Abs(this.rb2d.linearVelocity.x);
+            this.animator.SetFloat("Speed", horizontalSpeed);
 
-        /*
-        if (this.jumpAction.WasPerformedThisFrame() && this.airborne) {
-            this.jumpBufferTimer = this.jumpBuffer;
-        }
-        if (!this.airborne && (this.jumpAction.WasPerformedThisFrame() || this.jumpBufferTimer > 0f) || this.jumpAction.WasPerformedThisFrame() && coyoteTimer > 0f) {
-            Jump(this.jumpForce, this.rb2d);
-        }
-        if (this.jumpBufferTimer > 0f) {
-            this.jumpBufferTimer -= Time.deltaTime;
-        }
-        if (this.coyoteTimer > 0f) {
-            this.coyoteTimer -= Time.deltaTime;
-        }
-        */
+            // Define Direção Vertical (1 = Cima, 0 = Frente, -1 = Baixo)
+            this.animator.SetInteger("Vertical", this.facingDirection[1]);
 
+            // Define se está Atirando (Timer)
+            if (this.shootingAnimTimer > 0)
+            {
+                this.shootingAnimTimer -= Time.deltaTime;
+                this.animator.SetBool("IsShooting", true);
+            }
+            else
+            {
+                this.animator.SetBool("IsShooting", false);
+            }
+        }
+
+        // 4. PULO
         if (!this.airborne && this.jumpAction.WasPerformedThisFrame()) {
             this.Jump(this.jumpForce, this.rb2d);
         }
 
-        //ATAQUE
-
+        // 5. ATAQUE
         if (this.attackTimer <= 0f) {
             if (this.attackAction.WasPressedThisFrame()) {
-                Attack(this.projectiles[this.selectedProjectile], new Vector2(this.verticalDirectionOnly ? 0 : this.facingDirection[0], this.facingDirection[1]));
+                // Calcula a direção do tiro
+                Vector2 shootDir = new Vector2(this.verticalDirectionOnly ? 0 : this.facingDirection[0], this.facingDirection[1]);
+                
+                Attack(this.projectiles[this.selectedProjectile], shootDir);
+                
                 this.attackTimer = this.attackDelay;
+
+                // --- Ativa a flag de animação de tiro ---
+                this.shootingAnimTimer = this.shootingAnimDuration;
             }
         }
         else {
@@ -151,40 +153,29 @@ public class MainCharacter : MonoBehaviour {
 
     private void Jump (float jumpForce, Rigidbody2D rb2d) {
         this.airborne = true;
-        /*
-        this.coyoteTimer = 0f;
-        this.jumpBufferTimer = 0f;
-        */
         rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
     private void Attack (GenericProjectile projectile, Vector2 direction) {
+        // Cria o projétil um pouco atrás para não colidir imediatamente com o player se necessário, ou ajuste o offset
         GenericProjectile instantiated = Instantiate(projectile, this.transform.position + Vector3.back, Quaternion.identity);
         instantiated.Fire(direction);
     }
 
     public void MakeAirborne (bool airborne) {
         this.airborne = airborne;
-        /*
-        this.coyoteTimer = this.coyoteTime;
-        */
     }
 
     private void OnTriggerEnter2D(Collider2D collider) {
         if (collider.CompareTag("Enemy")) {
             Enemy enemy = collider.GetComponent<Enemy>();
-            this.health.TakeDamage(enemy.contactDamage);
+            // Verificação de segurança caso o inimigo não tenha o componente
+            if (enemy != null) {
+                this.health.TakeDamage(enemy.contactDamage);
+            }
         }
     }
     
-    /*
-    private void OnCollisionEnter2D (Collision2D collision) {
-        if (collision.collider.CompareTag("Ground")) {
-            this.airborne = false;
-        }
-    }
-    */
-
     private void Die () {
         Destroy(this.gameObject);
     }
