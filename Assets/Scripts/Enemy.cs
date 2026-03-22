@@ -1,14 +1,14 @@
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
-    [SerializeField] private float movementSpeed;
-    [SerializeField] private uint maxHealth;
-    [SerializeField] private Vector2 movementDirection;
-    [SerializeField] private Rigidbody2D rb2d;
-    [SerializeField] private Animator animator;
+    [SerializeField] protected float movementSpeed;
+    [SerializeField] protected uint maxHealth;
+    [SerializeField] protected Vector2 movementDirection;
+    [SerializeField] protected Rigidbody2D rb2d;
+    [SerializeField] protected Animator animator;
 
     public uint contactDamage;
-    public Health health { get; private set; }
+    public Health health { get; protected set; }
 
     // Parâmetro para controlar velocidade da animação
     private static readonly int AnimationSpeed = Animator.StringToHash("AnimationSpeed");
@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour {
         }
     }
 
-    private void Die() {
+    protected void Die() {
         Destroy(this.gameObject);
     }
 
@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour {
         MoveTo(this.movementDirection * this.movementSpeed);
     }
 
-    private void MoveTo(Vector2 direction) {
+    protected void MoveTo(Vector2 direction) {
         this.rb2d.linearVelocity = direction;
         Vector3 scale = this.transform.localScale;
         scale.x = direction.x >= 0f ? 1 : -1;

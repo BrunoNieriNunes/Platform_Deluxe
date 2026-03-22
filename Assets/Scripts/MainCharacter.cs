@@ -168,10 +168,19 @@ public class MainCharacter : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collider) {
         if (collider.CompareTag("Enemy")) {
-            Enemy enemy = collider.GetComponent<Enemy>();
             // Verificação de segurança caso o inimigo não tenha o componente
-            if (enemy != null) {
+            if (collider.TryGetComponent<Enemy>(out var enemy)) {
                 this.health.TakeDamage(enemy.contactDamage);
+            }
+            else {
+                if (collider.TryGetComponent<Turret>(out var turret)) {
+                    this.health.TakeDamage(turret.contactDamage);
+                }
+            }
+        }
+        else if (collider.CompareTag("Laser")) {
+            if (collider.TryGetComponent<Laser>(out var laser)) {
+                this.health.TakeDamage(laser.contactDamage);
             }
         }
     }
