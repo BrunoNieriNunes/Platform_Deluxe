@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1642816131803709003}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -103,6 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4715258260169350906}
   - component: {fileID: 515963764027008137}
+  - component: {fileID: 1787543093183165305}
   m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
@@ -172,7 +173,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c1a9a1931dbdd2d499e7d2a2d1065f1d, type: 3}
+  m_Sprite: {fileID: 2349202919161859538, guid: b31ac2c8fd8cb9a4b9330c98b386fe73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -183,6 +184,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1787543093183165305
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2330843379917834729}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e8389d023a3fdd74e8c047769b3ca589, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2364403238055182598
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,6 +216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4189755008307190820}
   - component: {fileID: 8539198062547924098}
+  - component: {fileID: 8806800723599157993}
   m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
@@ -262,7 +286,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3469518775725551055, guid: 9e82563ccf8d7a84fad8fed76eb5aa2d, type: 3}
+  m_Sprite: {fileID: 3469518775725551055, guid: a3a49cf9e33e5ab41b621ac8881f3d69, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -273,6 +297,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8806800723599157993
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2364403238055182598}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 91bf4618ef9af4a48a7c707b69aae9de, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3028400953670569135
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,6 +423,7 @@ GameObject:
   - component: {fileID: 541179042135154580}
   - component: {fileID: 4177271249325245543}
   - component: {fileID: 2630123423899728176}
+  - component: {fileID: 1168693318511706176}
   m_Layer: 7
   m_Name: Turret
   m_TagString: Enemy
@@ -494,3 +541,25 @@ MonoBehaviour:
   laserDurationTime: 0.25
   extraDelay: 0.5
   contactDamage: 1
+--- !u!95 &1168693318511706176
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5862252881019124173}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

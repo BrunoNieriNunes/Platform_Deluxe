@@ -13,6 +13,8 @@ public class Turret : MonoBehaviour {
     public uint contactDamage;
     public Health health { get; private set; }
 
+    private Animator animator; // 👈 animação
+
     ~Turret() {
         if (this.health != null) {
             this.health.OnDeath -= Die;
@@ -23,6 +25,9 @@ public class Turret : MonoBehaviour {
         this.health = new Health(this.maxHealth);
         this.health.OnDeath += Die;
         this.laserBox.SetActive(false);
+
+        // 👇 pega o Animator da sprite (filho)
+        this.animator = GetComponentInChildren<Animator>();
     }
 
     private void Die() {
@@ -31,15 +36,25 @@ public class Turret : MonoBehaviour {
 
     public IEnumerator FireLaser() {
         this.isFiring = true;
-        //windup
+
+        // 🔥 dispara animação de tiro
+        if (animator != null) {
+            animator.SetTrigger("Fire");
+        }
+
+        // windup
         yield return new WaitForSeconds(windupTime);
-        //fire
+
+        // fire
         this.laserBox.SetActive(true);
         yield return new WaitForSeconds(laserDurationTime);
-        //end
+
+        // end
         this.laserBox.SetActive(false);
-        //wait a bit
+
+        // wait a bit
         yield return new WaitForSeconds(extraDelay);
+
         this.isFiring = false;
     }
 }

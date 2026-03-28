@@ -1,17 +1,23 @@
 using UnityEngine;
 
 public class SidewaysDetection : MonoBehaviour {
-    [SerializeField] private Enemy papa;
+    private Enemy papa;
+
+    private void Awake() {
+        papa = GetComponentInParent<Enemy>(); // 👈 pega automaticamente
+    }
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.collider.CompareTag("Ground")) {
-            this.papa.DealWithCollision();
+            if (papa != null)
+                papa.DealWithCollision();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collider) {
         if (collider.CompareTag("Stopper")) {
-            this.papa.DealWithCollision();
+            if (papa != null)
+                papa.DealWithCollision();
         }
     }
 }

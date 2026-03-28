@@ -1,0 +1,663 @@
+fileFormatVersion: 2
+guid: a3a49cf9e33e5ab41b621ac8881f3d69
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3469518775725551055
+    second: concept_enemy_laser_attack_0
+  - first:
+      213: 668634050941110876
+    second: concept_enemy_laser_attack_1
+  - first:
+      213: -6567448261315892386
+    second: concept_enemy_laser_attack_2
+  - first:
+      213: 3074285763010096689
+    second: concept_enemy_laser_attack_3
+  - first:
+      213: 6342421083799221462
+    second: concept_enemy_laser_attack_4
+  - first:
+      213: -2897350808412968902
+    second: concept_enemy_laser_attack_5
+  - first:
+      213: -1372796052456019427
+    second: concept_enemy_laser_attack_6
+  - first:
+      213: -4010001794144027908
+    second: concept_enemy_laser_attack_7
+  - first:
+      213: 6929387945545740902
+    second: concept_enemy_laser_attack_8
+  - first:
+      213: 1629244922528853832
+    second: concept_enemy_laser_attack_9
+  - first:
+      213: -6405617619547343034
+    second: concept_enemy_laser_attack_10
+  - first:
+      213: 6872525316980508235
+    second: concept_enemy_laser_attack_11
+  - first:
+      213: -1184733196095831508
+    second: concept_enemy_laser_attack_12
+  - first:
+      213: -313028396792862129
+    second: concept_enemy_laser_attack_13
+  - first:
+      213: -3064548704967587375
+    second: concept_enemy_laser_attack_14
+  - first:
+      213: -5428823711629746644
+    second: concept_enemy_laser_attack_15
+  - first:
+      213: 6273023944696758004
+    second: concept_enemy_laser_attack_16
+  - first:
+      213: 9069307375629710947
+    second: concept_enemy_laser_attack_17
+  - first:
+      213: -4696633047200318460
+    second: concept_enemy_laser_attack_18
+  - first:
+      213: -8894365573236433321
+    second: concept_enemy_laser_attack_19
+  - first:
+      213: -7324161934917943562
+    second: concept_enemy_laser_attack_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: concept_enemy_laser_attack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcd6ba8b1f4362030800000000000000
+      internalID: 3469518775725551055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: concept_enemy_laser_attack_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5a43137027774900800000000000000
+      internalID: 668634050941110876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: concept_enemy_laser_attack_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 25
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5b62872a9cbbd4a0800000000000000
+      internalID: -6567448261315892386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: concept_enemy_laser_attack_3
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 0
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13ee14afc9e0aaa20800000000000000
+      internalID: 3074285763010096689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: concept_enemy_laser_attack_4
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 0
+        width: 19
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d4fcc34f5ec40850800000000000000
+      internalID: 6342421083799221462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: concept_enemy_laser_attack_5
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
+        width: 19
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a38aad26aca8ac7d0800000000000000
+      internalID: -2897350808412968902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: concept_enemy_laser_attack_6
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 19
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1aec408349d2fce0800000000000000
+      internalID: -1372796052456019427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: concept_enemy_laser_attack_7
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 0
+        width: 19
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfabd573d9c9958c0800000000000000
+      internalID: -4010001794144027908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: concept_enemy_laser_attack_8
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 0
+        width: 19
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 662b02d7f912a2060800000000000000
+      internalID: 6929387945545740902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: concept_enemy_laser_attack_9
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 19
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84fe07bff9d3c9610800000000000000
+      internalID: 1629244922528853832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: concept_enemy_laser_attack_10
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 0
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 647b5e3a6bcaa17a0800000000000000
+      internalID: -6405617619547343034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: concept_enemy_laser_attack_11
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 0
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4680841d5d106f50800000000000000
+      internalID: 6872525316980508235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: concept_enemy_laser_attack_12
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 0
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2248156f6bfe8fe0800000000000000
+      internalID: -1184733196095831508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: concept_enemy_laser_attack_13
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 0
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4a2d84e456e7abf0800000000000000
+      internalID: -313028396792862129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: concept_enemy_laser_attack_14
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 0
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d9068380398875d0800000000000000
+      internalID: -3064548704967587375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: concept_enemy_laser_attack_15
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 0
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2e5710f891f8a4b0800000000000000
+      internalID: -5428823711629746644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: concept_enemy_laser_attack_16
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 0
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fe7b23ba024e0750800000000000000
+      internalID: 6273023944696758004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: concept_enemy_laser_attack_17
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 0
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3663d33c107acdd70800000000000000
+      internalID: 9069307375629710947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: concept_enemy_laser_attack_18
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 0
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40cb34d902532deb0800000000000000
+      internalID: -4696633047200318460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: concept_enemy_laser_attack_19
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 0
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75e57c0b2add09480800000000000000
+      internalID: -8894365573236433321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: concept_enemy_laser_attack_20
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 0
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fe37c776895b5a90800000000000000
+      internalID: -7324161934917943562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      concept_enemy_laser_attack_0: 3469518775725551055
+      concept_enemy_laser_attack_1: 668634050941110876
+      concept_enemy_laser_attack_10: -6405617619547343034
+      concept_enemy_laser_attack_11: 6872525316980508235
+      concept_enemy_laser_attack_12: -1184733196095831508
+      concept_enemy_laser_attack_13: -313028396792862129
+      concept_enemy_laser_attack_14: -3064548704967587375
+      concept_enemy_laser_attack_15: -5428823711629746644
+      concept_enemy_laser_attack_16: 6273023944696758004
+      concept_enemy_laser_attack_17: 9069307375629710947
+      concept_enemy_laser_attack_18: -4696633047200318460
+      concept_enemy_laser_attack_19: -8894365573236433321
+      concept_enemy_laser_attack_2: -6567448261315892386
+      concept_enemy_laser_attack_20: -7324161934917943562
+      concept_enemy_laser_attack_3: 3074285763010096689
+      concept_enemy_laser_attack_4: 6342421083799221462
+      concept_enemy_laser_attack_5: -2897350808412968902
+      concept_enemy_laser_attack_6: -1372796052456019427
+      concept_enemy_laser_attack_7: -4010001794144027908
+      concept_enemy_laser_attack_8: 6929387945545740902
+      concept_enemy_laser_attack_9: 1629244922528853832
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
