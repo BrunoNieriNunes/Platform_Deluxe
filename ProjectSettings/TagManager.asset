@@ -9,6 +9,7 @@ TagManager:
   - PlayerProjectile
   - Stopper
   - Feet
+  - Laser
   layers:
   - Default
   - TransparentFX
